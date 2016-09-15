@@ -1,0 +1,4 @@
+--require test/init.js
+--globals result,r,NODE_CONFIG
+--recursive
+--timeout 30000
