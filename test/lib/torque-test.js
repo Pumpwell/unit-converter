@@ -1,5 +1,5 @@
 const sut = require("../../lib/torque");
-const {metric, imperial} = sut.types;
+const {metric, imperial} = require("../../lib/types");
 
 describe(__filename, function () {
   describe("convert", function () {
@@ -55,13 +55,6 @@ describe(__filename, function () {
           expect(() => sut.convert(test)).to.throw(`Conversion from ${test.from} to ${test.to} unknown`);
         });
       });
-    });
-  });
-
-  describe("types", function () {
-    it("should have types object", function () {
-      sut.should.have.property("types");
-      sinon.match.object.test(sut.types).should.be.true;
     });
   });
 });
