@@ -2,6 +2,7 @@
 
 module.exports = {
   dailyProduction: require("./daily-production"),
+  density: require("./density"),
   length: require("./length"),
   load: require("./load"),
   position: require("./position"),
