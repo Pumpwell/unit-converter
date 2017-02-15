@@ -4,12 +4,12 @@ var types = require("./types");
 
 module.exports = {
   convert: function convert(_ref) {
-    var _ref$from = _ref.from;
-    var from = _ref$from === undefined ? types.metric : _ref$from;
-    var _ref$to = _ref.to;
-    var to = _ref$to === undefined ? types.metric : _ref$to;
-    var _ref$value = _ref.value;
-    var value = _ref$value === undefined ? 0 : _ref$value;
+    var _ref$from = _ref.from,
+        from = _ref$from === undefined ? types.metric : _ref$from,
+        _ref$to = _ref.to,
+        to = _ref$to === undefined ? types.metric : _ref$to,
+        _ref$value = _ref.value,
+        value = _ref$value === undefined ? 0 : _ref$value;
 
     var conversion = 0.7375621492772654;
 
