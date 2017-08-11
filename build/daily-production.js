@@ -2,6 +2,13 @@
 
 var types = require("./types");
 
+var units = {
+  "bbl/d": types.imperial,
+  imperial: types.imperial,
+  "m3/d": types.metric,
+  metric: types.metric
+};
+
 module.exports = {
   convert: function convert(_ref) {
     var _ref$from = _ref.from,
@@ -12,14 +19,13 @@ module.exports = {
         value = _ref$value === undefined ? 0 : _ref$value;
 
     var conversion = 6.28981;
+    var f = units[from.toLowerCase()];
+    var t = units[to.toLowerCase()];
 
-    from = from.toLocaleLowerCase();
-    to = to.toLocaleLowerCase();
+    if (!f || !t) throw new Error("Conversion from " + from + " to " + to + " unknown");
+    if (f === types.metric && t === types.imperial) return value * conversion;
+    if (f === types.imperial && t === types.metric) return value / conversion;
 
-    if (from === to) return value;
-    if (from === types.metric && to === types.imperial) return value * conversion;
-    if (from === types.imperial && to === types.metric) return value / conversion;
-
-    throw new Error("Conversion from " + from + " to " + to + " unknown");
+    return value;
   }
 };
