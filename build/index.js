@@ -13,5 +13,6 @@ module.exports = {
   speed: require("./speed"),
   temperature: require("./temperature"),
   torque: require("./torque"),
-  types: require("./types")
+  types: require("./types"),
+  volume: require("./volume")
 };
